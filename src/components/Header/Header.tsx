@@ -1,3 +1,5 @@
+'use client'
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -5,16 +7,14 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import Input from '@/shared/Input'
 import Logo from '@/shared/Logo'
 import clsx from 'clsx'
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from 'lucide-react'
-import { FC } from 'react'
+import Link from 'next/link'
+import { FC, useEffect, useState } from 'react'
 import AvatarDropdown from './AvatarDropdown'
 import NotifyDropdown from './NotifyDropdown'
-import Link from 'next/link'
 
 interface HeaderProps {
   hasBorderBottom?: boolean
@@ -56,10 +56,19 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-const Header: FC<HeaderProps> = async ({ hasBorderBottom = true, className }) => {
+const Header: FC<HeaderProps> = ({ hasBorderBottom = true, className }) => {
   const isMobile = false
+  const [isAtTop, setIsAtTop] = useState(true)
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY <= 0) // adjust 50px threshold
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   return (
-    <div className={clsx('relative', className)}>
+    <div className={clsx(`fixed top-0 right-0 left-0 ${isAtTop ? '' : 'bg-[var(--color-neutral-900)]'}`, className)}>
       <div className="row-auto">
         <div
           className={clsx(
