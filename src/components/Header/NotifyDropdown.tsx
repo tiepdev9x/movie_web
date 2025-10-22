@@ -9,6 +9,7 @@ import { CloseButton, Popover, PopoverButton, PopoverPanel } from '@headlessui/r
 import { BellIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { FC } from 'react'
+import { cn } from '@/lib/utils'
 
 const notifications = [
   {
@@ -35,16 +36,17 @@ const notifications = [
 ]
 
 interface Props {
-  className?: string
+  className?: string,
+  classButton?: string,
 }
 
-const NotifyDropdown: FC<Props> = ({ className = '' }) => {
+const NotifyDropdown: FC<Props> = ({ className = '', classButton = '' }) => {
   return (
     <Popover className={className}>
       <>
         <PopoverButton
-          className={
-            'relative -m-2.5 flex cursor-pointer items-center justify-center rounded-full p-2.5 hover:bg-neutral-100 focus-visible:outline-hidden dark:hover:bg-neutral-800'
+          className={cn(
+            'relative -m-2.5 flex cursor-pointer items-center justify-center rounded-full p-2.5 hover:bg-neutral-100 focus-visible:outline-hidden dark:hover:bg-neutral-800', classButton)
           }
         >
           <span className="absolute end-2 top-2 h-2 w-2 rounded-full bg-blue-500"></span>

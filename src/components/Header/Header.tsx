@@ -68,7 +68,12 @@ const Header: FC<HeaderProps> = ({ hasBorderBottom = true, className }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   return (
-    <div className={clsx(`fixed top-0 right-0 left-0 ${isAtTop ? '' : 'bg-[var(--color-neutral-900)]'}`, className)}>
+    <div
+      className={clsx(
+        `fixed top-0 right-0 left-0 ${isAtTop ? '' : 'bg-white dark:bg-[var(--color-neutral-900)]'}`,
+        className
+      )}
+    >
       <div className="row-auto">
         <div
           className={clsx(
@@ -80,22 +85,35 @@ const Header: FC<HeaderProps> = ({ hasBorderBottom = true, className }) => {
           <div className="flex items-center justify-center gap-x-3 sm:gap-x-8">
             <Logo />
             <div className="relative">
-              <Input sizeClass="px-6 py-3" fontClass="text-base/6" rounded="rounded-full" placeholder="search" />
+              <Input
+                name={`search`}
+                className={`bg-transparent placeholder-gray-500 dark:bg-transparent dark:placeholder-white ${isAtTop ? 'text-white placeholder-white' : ''}`}
+                sizeClass="px-6 py-3"
+                fontClass="text-base/6"
+                rounded="rounded-full"
+                placeholder="search"
+              />
             </div>
             <NavigationMenu viewport={isMobile}>
               <NavigationMenuList className="flex-wrap">
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className={`bg-transparent`}>
-                    <Link href="/">Phim lẻ</Link>
+                    <Link className={isAtTop ? 'text-white' : ''} href="/">
+                      Phim lẻ
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild className={`bg-transparent`}>
-                    <Link href="/">Phim bộ</Link>
+                    <Link className={isAtTop ? 'text-white' : ''} href="/">
+                      Phim bộ
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`bg-transparent`}>Thể loại</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`bg-transparent ${isAtTop ? 'text-white' : ''}`}>
+                    Thể loại
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
@@ -107,7 +125,9 @@ const Header: FC<HeaderProps> = ({ hasBorderBottom = true, className }) => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hidden md:block">
-                  <NavigationMenuTrigger className={`bg-transparent`}>Quốc gia</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`bg-transparent ${isAtTop ? 'text-white' : ''}`}>
+                    Quốc gia
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[200px] gap-4">
                       <li>
@@ -128,7 +148,10 @@ const Header: FC<HeaderProps> = ({ hasBorderBottom = true, className }) => {
             </NavigationMenu>
           </div>
           <div className="flex flex-1 items-center justify-end gap-x-2.5 sm:gap-x-6">
-            <NotifyDropdown />
+            <NotifyDropdown
+              classButton={`${isAtTop ? 'hover:bg-neutral-800' : ''}`}
+              className={`${isAtTop ? 'text-white' : ''}`}
+            />
             <AvatarDropdown />
           </div>
         </div>
