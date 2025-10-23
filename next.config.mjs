@@ -28,6 +28,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.nutscdn.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }

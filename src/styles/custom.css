@@ -2,6 +2,7 @@
 .swiper {
     width: 100%;
     background: #000;
+    height: 70vh;
 }
 
 .swiper-slide {
@@ -9,9 +10,32 @@
     color: #fff;
 }
 
+
 .background-fade {
     width: 100%;
-    height: auto;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: 50%;
+    background-size: cover;
+    filter: blur(50px);
+    -webkit-filter: blur(80px);
+    opacity: .2
+}
+.safe-area {
+    cursor: grab;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .swiper-slide .title {
@@ -108,6 +132,13 @@
     justify-content: center;
     color: var(--primary-button-text)!important;
     opacity: .95
+}
+.button-play:hover {
+    box-shadow: 0 5px 10px 10px rgba(255, 218, 125, .15);
+}
+a:hover {
+    color: var(--primary-text);
+    cursor: pointer;
 }
 
 .button-play i {
