@@ -69,7 +69,7 @@ const sliderFakeData = [
     },
   },
   {
-    title: 'Hoa hồng có gai',
+    title: 'Hoa gai có hong',
     subtitle: 'The Roses',
     rating: 7.0,
     age_limit: 'T16',

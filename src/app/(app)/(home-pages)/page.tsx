@@ -1,5 +1,6 @@
-import { Metadata } from 'next'
+import GoogleAds from '@/components/GoogleAds'
 import MoviesBanner from '@/components/MoviesBanner'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -7,10 +8,10 @@ export const metadata: Metadata = {
 }
 
 async function Page() {
-
   return (
     <main className="w-full">
-    <MoviesBanner />
+      <MoviesBanner />
+      <GoogleAds />
     </main>
   )
 }
