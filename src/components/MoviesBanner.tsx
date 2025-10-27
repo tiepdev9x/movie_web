@@ -198,13 +198,13 @@ export default function MoviesBanner() {
                  style={{
                    backgroundImage: 'url(' + item.images.background + ')',
                  }}></div>
-            <div className="cover-fade absolute top-0 left-0 w-full h-[70vh]">
+            <div className="cover-fade absolute top-0 left-0 w-full h-[80vh]">
               <div className="cover-image">
                 <Image
                   alt={item.title}
                   width={1920}
                   height={1080}
-                  className="visible w-full opacity-[0.4] fade-in h-[70vh]"
+                  className="visible w-full opacity-[0.4] fade-in h-[80vh]"
                   title={item.title}
                   loading="lazy"
                   src={item.images.background}

@@ -1,6 +1,7 @@
 import GoogleAds from '@/components/GoogleAds'
 import MoviesBanner from '@/components/MoviesBanner'
 import { Metadata } from 'next'
+import HotCategories from '@/components/HotCategories'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -12,6 +13,7 @@ async function Page() {
     <main className="w-full">
       <MoviesBanner />
       <GoogleAds />
+      <HotCategories />
     </main>
   )
 }
