@@ -1,0 +1,67 @@
+.hot-cat {
+  gap: 1rem;
+}
+.hot-cat .row-topic {
+  position: relative;
+  top: 0;
+  padding: 1.2rem 2.5rem 1.2rem 1.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+}
+.hot-cat .row-topic.more-topic {
+  padding: 1rem;
+}
+.hot-cat .row-topic.more-topic .intro {
+  min-height: auto;
+}
+.hot-cat .row-topic:hover {
+  top: -0.6rem;
+}
+.hot-cat .mask {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -wbkit-mask-image: none !important;
+  box-shadow: inset 0 0 30px 5px #fff0;
+}
+.hot-cat .mask:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  background: linear-gradient(-40deg, #fff3, #fff0 430%, #fff0 0, #fff3);
+}
+.hot-cat .mask:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-mask-image: linear-gradient(-45deg, black, transparent 40%);
+  mask-image: linear-gradient(-45deg, black, transparent 40%);
+  background-image: url(/images/wave.png);
+  background-repeat: no-repeat;
+  background-size: 200px 140px;
+  background-position: 100% 100%;
+  opacity: 0.3;
+}
+.hot-cat .intro {
+  min-height: 110px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  gap: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+/*# sourceMappingURL=HotCategories.css.map */
